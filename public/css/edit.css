@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/bgc.jpg");
+    background-position: center;
+}
+.popup {
+    width: 400px;
+    height: 400px;
+    gap: 3rem;
+    display: flex;
+    box-shadow: 2px 2px 10px rgb(168, 166, 166);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(1px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.605);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+.popup h1 {
+    color: white;
+    transition: 1s ease;
+}
+.popup form {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popup form input[type="text"] {
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    padding: 1rem 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-weight: 400;
+}
+.popup form input[type="submit"] {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    background-color: rgb(255, 0, 51);
+    color: white;
+    cursor: pointer;
+}
+.popup form input[type="submit"]:hover {
+    box-shadow: 2px 2px 5px white;
+    transition: 200ms ease;
+    transform: translateY(-5px);
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .popup {
+        width: 90%;
+        height: auto;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    .popup form input[type="text"] {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: medium;
+    }
+    .popup form input[type="submit"] {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: medium;
+        border-radius: 25px;
+    }
+    .popup form {
+        gap: 2rem;
+    }
+}

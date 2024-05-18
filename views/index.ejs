@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>TODO-LIST</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <h1>TODO LIST</h1>
+      </div>
+
+      <div class="main">
+        <div class="main-top">
+          <form action="/" method="post">
+            <input type="text" name="content" id="content" required />
+            <input type="submit" value="ADD" />
+          </form>
+        </div>
+        <% tododata.forEach(data => {%>
+        <div class="main-bottom">
+          <div class="text">
+            <p><%= data.content %></p>
+          </div>
+          <div class="btn">
+            <button><a href="edit/<%= data._id %>?_method=PUT">EDIT</a></button>
+            <form action="/delete/<%= data._id %>?_method=DELETE" method="post">
+              <button>DELETE</button>
+            </form>
+          </div>
+        </div>
+        <%}); %>
+      </div>
+    </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/script.js"></script>
+    
+  </body>
+</html>
